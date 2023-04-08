@@ -127,12 +127,12 @@ void Direction(ConsoleKeyInfo keyPress)
         Console.SetCursorPosition(left: snake[index: i].Item1, top: snake[index: i].Item2);
         Console.Write(value: "■");
     }
-
-    Thread.Sleep(millisecondsTimeout: ms);
+    
     Console.SetCursorPosition(left: snake[index: snake.Count - 1].Item1, top: snake[index: snake.Count - 1].Item2);
     Console.Write(value: keyPress.Key is ConsoleKey.UpArrow ? "▼" :
         keyPress.Key is ConsoleKey.LeftArrow or ConsoleKey.W ? "►" :
         keyPress.Key is ConsoleKey.RightArrow or ConsoleKey.E ? "◄" : "▲");
+    Thread.Sleep(millisecondsTimeout: ms);
     Console.SetCursorPosition(left: snake[index: 0].Item1, top: snake[index: 0].Item2);
     Console.Write(value: " ");
     snake.RemoveAt(index: 0);
